@@ -98,6 +98,46 @@ benchmark_settings = {
         'theshold': 5
         },
 
+    'HDFS': {
+        'log_file': 'HDFS/HDFS_2k.log',
+        'log_format': '<Date> <Time> <Pid> <Level> <Component>: <Content>',
+        'regex': [r'blk_-?\d+', r'(\d+\.){3}\d+(:\d+)?'],
+        'delimiter': [],
+        'theshold': 2
+    },
+
+    'Hadoop': {
+        'log_file': 'Hadoop/Hadoop_2k.log',
+        'log_format': '<Date> <Time> <Level> \[<Process>\] <Component>: <Content>',
+        'regex': [r'(\d+\.){3}\d+'],
+        'delimiter': [],
+        'theshold': 6
+    },
+
+    'Spark': {
+        'log_file': 'Spark/Spark_2k.log',
+        'log_format': '<Date> <Time> <Level> <Component>: <Content>',
+        'regex': [r'(\d+\.){3}\d+', r'\b[KGTM]?B\b', r'([\w-]+\.){2,}[\w-]+'],
+        'delimiter': [],
+        'theshold': 4
+    },
+
+    'Zookeeper': {
+        'log_file': 'Zookeeper/Zookeeper_2k.log',
+        'log_format': '<Date> <Time> - <Level>  \[<Node>:<Component>@<Id>\] - <Content>',
+        'regex': [r'(/|)(\d+\.){3}\d+(:\d+)?'],
+        'delimiter': [],
+        'theshold': 3
+    },
+
+    'Proxifier': {
+        'log_file': 'Proxifier/Proxifier_2k.log',
+        'log_format': '\[<Time>\] <Program> - <Content>',
+        'regex': [r'<\d+\ssec', r'([\w-]+\.)+[\w-]+(:\d+)?', r'\d{2}:\d{2}(:\d{2})*', r'[KGTM]B'],
+        'delimiter': [],
+        'theshold': 3
+    },
+
 
 
 }
